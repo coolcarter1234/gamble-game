@@ -36,8 +36,8 @@ function spin() {
     spins--;
 
     const prize = prizes[Math.floor(Math.random() * prizes.length)];
-    let moneyWon = prize.money * multiplier;
-    let spinsWon = prize.spins * multiplier;
+    let moneyWon = prize.money;
+    let spinsWon = prize.spins;
 
     // Apply multiplier effects
     if (multiplier > 1) {
@@ -48,12 +48,14 @@ function spin() {
             moneyWon *= 2;
             spinsWon *= 2;
         }
+        document.getElementById("message").innerText = prize.text + " (Multiplier Applied!)";
+    } else {
+        document.getElementById("message").innerText = prize.text;
     }
 
     balance += moneyWon;
     spins += spinsWon;
 
-    document.getElementById("message").innerText = prize.text + (multiplier > 1 ? " (Multiplier Applied!)" : "");
     multiplier = 1; // Reset multiplier after spin
     updateDisplay();
 }
