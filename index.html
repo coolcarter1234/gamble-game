@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gambling Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gambling Game</h1>
+        <p>Goal: Reach $5000</p>
+        <div id="game">
+            <p id="balance">Balance: $10</p>
+            <p id="spins">Spins: 1</p>
+            <button id="spinButton" onclick="spin()">Buy a Spin ($10)</button>
+            <button id="buyMultiplier" onclick="buyMultiplier()">Buy 2x Multiplier ($50)</button>
+            <p id="message"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
